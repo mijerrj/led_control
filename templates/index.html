@@ -1,0 +1,39 @@
+<!-- TEST: Nova različica -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LED lučka</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Nadzor LED lučke</h1>
+        <p>Status LED: <span id="led-status">{{ led_status }}</span></p>
+        <div class="buttons">
+            <button class="btn btn-on"  onclick="controlLED('on')">Vklop</button>
+            <button class="btn btn-off" onclick="controlLED('off')">Izklop</button>
+        </div>
+    </div>
+    <script>
+        function controlLED(action) {
+            // Nastavi URL za vsak akcijski gumb
+            const url = action === 'on' ? '/led/on' : '/led/off';
+
+            fetch(url, {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Posodobi status LED na strani
+                document.getElementById('led-status').textContent = data.status;
+            })
+            .catch(err => {
+                console.error('Napaka pri nadzoru LED:', err);
+            });
+        }
+    </script>
+</body>
+</html>
