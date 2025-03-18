@@ -71,9 +71,15 @@ Projekt za nadzor LED lučke preko spletne aplikacije, ki teče na Raspberry Pi 
 ![image](https://github.com/user-attachments/assets/76d96fb2-f9a5-4898-a049-8ac4c6595637)
 
 
-**Prestrezanje podatkov na http prometu z Wireshark-om:**
+**Prestrezanje podatkov na http prometu z tcpdump**
 
-![image](https://github.com/user-attachments/assets/ce6da9bb-7eb5-432a-8da9-a802bc36078f)
+*Nezaščiteno*
+
+![image](https://github.com/user-attachments/assets/0a645eea-22e3-47b1-8632-fba6a358c591)
+
+*Zaščiteno*
+
+![image](https://github.com/user-attachments/assets/2a65cc3a-437d-44cd-ab6f-593becc61ff9)
 
 
 **Simulacija BRUTE-FORCE napada**
