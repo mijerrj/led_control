@@ -21,7 +21,7 @@ Projekt za nadzor LED lučke preko spletne aplikacije, ki teče na Raspberry Pi 
 - **GPIO** (pini na RPI za nadzor LED na Raspberry Pi)
 - **API** (končne točke za upravljanje in branje statusa)
 - **IDS** (Sistem za nadzor vsiljivega dostopa do aplikacije. Uporabil sem aplikacijo Snort, AIDE, HPING3, HYDRA, Nmap, HTOP)
-- **Wireshark** (Orodje za simulacijo in dokumentacijo ranljivosti nešifrirane komunikacije)
+- **TCPdump** (Orodje za simulacijo in dokumentacijo ranljivosti nešifrirane komunikacije)
 
 ## Zahteve
 - Raspberry Pi 3 ali novejši.
