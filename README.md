@@ -20,7 +20,7 @@ Projekt za nadzor LED lučke preko spletne aplikacije, ki teče na Raspberry Pi 
 - **DuckDNS** (spletna domena)
 - **GPIO** (pini na RPI za nadzor LED na Raspberry Pi)
 - **API** (končne točke za upravljanje in branje statusa)
-- **IDS** (Sistem za nadzor vsiljivega dostopa do aplikacije. Uporabil sem aplikacijo Snort, AIDE, HPING3, HYDRA, Nmap)
+- **IDS** (Sistem za nadzor vsiljivega dostopa do aplikacije. Uporabil sem aplikacijo Snort, AIDE, HPING3, HYDRA, Nmap, HTOP)
 - **Wireshark** (Orodje za simulacijo in dokumentacijo ranljivosti nešifrirane komunikacije)
 
 ## Zahteve
@@ -28,6 +28,7 @@ Projekt za nadzor LED lučke preko spletne aplikacije, ki teče na Raspberry Pi 
 - Priklopljena LED lučka z ustreznimi povezavami.
 - Nameščen Python 3.7+.
 - Dostop do interneta.
+- Analiza vpliva šifriranja na zakasnitev in porabo virov
 - Implementacija mehanizma za nadzor dostopa do API-končnih točk za LED in tipko.
 - Zavarovanje dostopa s token-based avtentikacijo (npr. JWT).
 - Zaznavanje varnostnih groženj v IoT s sistemom za zaznavanje vdorov (IDS).
