@@ -57,8 +57,18 @@ Projekt za nadzor LED lučke preko spletne aplikacije, ki teče na Raspberry Pi 
 
 ![image](https://github.com/user-attachments/assets/7bc5c77b-861b-4d01-b226-c835a8131f44)
 
+**Poraba virov pri zaščitenem in nezaščitenem prometu z HTOP**
 
-S pomočjo Wireshark-a sem prestrezal podatke na http prometu:
+*Nezaščiteno*
+![image](https://github.com/user-attachments/assets/f87ac3e4-ef9c-45f3-bd65-2274e9c79d33)
+
+*Zaščiteno*
+
+![image](https://github.com/user-attachments/assets/76d96fb2-f9a5-4898-a049-8ac4c6595637)
+
+
+
+**Prestrezanje podatkov na http prometu z Wireshark-om:**
 
 ![image](https://github.com/user-attachments/assets/ce6da9bb-7eb5-432a-8da9-a802bc36078f)
 
