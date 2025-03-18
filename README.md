@@ -59,8 +59,10 @@ Projekt za nadzor LED lučke preko spletne aplikacije, ki teče na Raspberry Pi 
 
 **Poraba virov pri zaščitenem in nezaščitenem prometu z HTOP**
 
+
 *Nezaščiteno*
 ![image](https://github.com/user-attachments/assets/f87ac3e4-ef9c-45f3-bd65-2274e9c79d33)
+
 
 *Zaščiteno*
 
@@ -71,6 +73,45 @@ Projekt za nadzor LED lučke preko spletne aplikacije, ki teče na Raspberry Pi 
 **Prestrezanje podatkov na http prometu z Wireshark-om:**
 
 ![image](https://github.com/user-attachments/assets/ce6da9bb-7eb5-432a-8da9-a802bc36078f)
+
+
+**Simulacija BRUTE-FORCE napada**
+
+![image](https://github.com/user-attachments/assets/4de0cc7f-896a-4778-b40f-050e867a75bf)
+
+
+**Simulacija ne avtoriziranega dostopa do API-ja (curl)**
+
+![image](https://github.com/user-attachments/assets/53aca40e-c664-4055-9bb5-c590dfe6945b)
+
+
+**Simulacija omrežnega napada (HPING3)**
+
+![image](https://github.com/user-attachments/assets/075c9d08-13d7-401e-b3ed-f87a7c267b36)
+
+
+**Spremljanje celovitosti datotek (AIDE)**
+
+Vsi podatki iz tega testa se nahajajo v datoteki Aide-report.txt
+
+**Skeniranje odprtih vrat z NMAP**
+
+![image](https://github.com/user-attachments/assets/b954f752-e76f-4b66-b938-0486966a6b2b)
+
+![image](https://github.com/user-attachments/assets/80b911e9-e7c7-45c7-85a1-1cbccebb7950)
+
+
+**Omogočanje požarnega zidu (ufw) in omejitev dovoljenih vrat**
+
+![image](https://github.com/user-attachments/assets/0c5205d0-5bb9-4afa-b5ab-c00d5673fc8e)
+
+Preden je bil projekt zaključen sem:
+⚠️ Izklopil Telnet (port 23) in FTP (port 21).
+⚠️ Posodobil Dropbear SSH (port 22) in v config dodal AllowUsers za samo en IP.
+⚠️ Onemogočil SMB in gostujoči dostop.
+⚠️ Konfiguracija za HTTPS (port 7443) je ostala nespremenjena ker je ustrezna.
+⚠️ HTTP zahteve sem preusmeril na HTTPS (port 7443).
+
 
 
 
