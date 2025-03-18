@@ -47,7 +47,7 @@ Projekt za nadzor LED lučke preko spletne aplikacije, ki teče na Raspberry Pi 
    - **GND** → Druga stran stikala.
 
 ## Namestitev
-- Prvi del namestitve je potekal po navodilih iz kibernetika.xyz Raspberry Pi 3.docx dokumenta z to razliko da sem namesto node.js uporabil Python in knjižnico Flask. Postavil sem svojo domeno na duckdns.org spletni strani in jo zaščitil z Let's Encrypt certifikatom na NGINX-u.
+- Prvi del namestitve je potekal po navodilih iz kibernetika.xyz Raspberry Pi 3.docx dokumenta z to razliko da sem namesto node.js uporabil Python in knjižnico Flask. Postavil sem svojo domeno na duckdns.org spletni strani in jo zaščitil z Let's Encrypt certifikatom na NGINX-u. Ker sem doma imel port 443 že zaseden sem za TLS povezavo uporabil port 7443.
 - V tem delu sem najprej namestil Python 3 in orodja za virtualna okolja, pripravil mapo za projekt, ustvaril in aktiviral virtualno okolje in namestil potrebne knjižnice (Flask, Flask-Limiter, RPi-GPIO). Ustvaril sem datoteko led_control.py, in mapo templates z datoteko index.html in podmapo css z .css datoteko. Po uspešnem testiranju aplikacije sem ustvaril led_control.service storitveno datoteko, ki je poskrbela za samodejno zaganjanje aplikacije ob zagonu (izpad elektrike ipd.) Na koncu, ko je vse delovalo tako kot mora sem z Flask-Limiter omejil število zahtev na web aplikacijo, kar bo preprečilo DDOS napade. V požarnem zidu sem pustil odprte samo tiste porte ki, so nujni za nemoteno delovanje aplikacije.
 - Nato sem začel izvajati različne teste, ki so testirali kako je aplikacija varna in uporabna za delo, lahko tudi za komercialno uporabo.
 
@@ -56,6 +56,7 @@ Projekt za nadzor LED lučke preko spletne aplikacije, ki teče na Raspberry Pi 
 **Analiza vpliva šifriranja na zakasnitev**  
 
 ![image](https://github.com/user-attachments/assets/7bc5c77b-861b-4d01-b226-c835a8131f44)
+
 
 **Poraba virov pri zaščitenem in nezaščitenem prometu z HTOP**
 
@@ -69,7 +70,6 @@ Projekt za nadzor LED lučke preko spletne aplikacije, ki teče na Raspberry Pi 
 ![image](https://github.com/user-attachments/assets/76d96fb2-f9a5-4898-a049-8ac4c6595637)
 
 
-
 **Prestrezanje podatkov na http prometu z Wireshark-om:**
 
 ![image](https://github.com/user-attachments/assets/ce6da9bb-7eb5-432a-8da9-a802bc36078f)
@@ -78,6 +78,13 @@ Projekt za nadzor LED lučke preko spletne aplikacije, ki teče na Raspberry Pi 
 **Simulacija BRUTE-FORCE napada**
 
 ![image](https://github.com/user-attachments/assets/4de0cc7f-896a-4778-b40f-050e867a75bf)
+
+
+**Simulacija BRUTE-FORCE napada na SSH**
+
+![image](https://github.com/user-attachments/assets/3b35d16d-b8f3-4aa9-b826-20a25d5fc0af)
+
+Malo ironično je, da zaradi zastarelih algoritmov ključev kot je diffie-hellman-group1-sha1, ki velja za nevarnega, brute-force napad ni uspel.
 
 
 **Simulacija ne avtoriziranega dostopa do API-ja (curl)**
@@ -93,6 +100,7 @@ Projekt za nadzor LED lučke preko spletne aplikacije, ki teče na Raspberry Pi 
 **Spremljanje celovitosti datotek (AIDE)**
 
 Vsi podatki iz tega testa se nahajajo v datoteki Aide-report.txt
+
 
 **Skeniranje odprtih vrat z NMAP**
 
@@ -113,6 +121,9 @@ Preden je bil projekt zaključen sem:
 - ⚠️ HTTP zahteve sem preusmeril na HTTPS (port 7443).
 
 
+**Beleženje zahtevkov na API, vključno z neuspelimi poizkusi**
+
+![image](https://github.com/user-attachments/assets/0103b5f0-b3be-45ef-88b2-678c6b96e4ca)
 
 
 Aplikacija je dostopna preko SSL povezave na https://www.vajeiot.duckdns.org:7443 (port je obvezen)
