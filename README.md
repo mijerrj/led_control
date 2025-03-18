@@ -53,7 +53,7 @@ Projekt za nadzor LED lučke preko spletne aplikacije, ki teče na Raspberry Pi 
 
 ## Testiranje
 
-Analiza vpliva šifriranja na zakasnitev  
+**Analiza vpliva šifriranja na zakasnitev**  
 
 ![image](https://github.com/user-attachments/assets/7bc5c77b-861b-4d01-b226-c835a8131f44)
 
