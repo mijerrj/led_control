@@ -1,4 +1,4 @@
-# LED Control Application
+# Aplikacija za nadzor LED diode na RPi3
 
 Projekt za nadzor LED lučke preko spletne aplikacije, ki teče na Raspberry Pi 3 z uporabo Flask in Nginx.
 
