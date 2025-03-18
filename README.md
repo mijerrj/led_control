@@ -122,6 +122,7 @@ Preden je bil projekt zaključen sem:
 - ⚠️ HTTP zahteve sem preusmeril na HTTPS (port 7443).
 
 
+
 **Beleženje zahtevkov na API, vključno z neuspelimi poizkusi**
 
 ![image](https://github.com/user-attachments/assets/0103b5f0-b3be-45ef-88b2-678c6b96e4ca)
