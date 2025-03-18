@@ -106,11 +106,11 @@ Vsi podatki iz tega testa se nahajajo v datoteki Aide-report.txt
 ![image](https://github.com/user-attachments/assets/0c5205d0-5bb9-4afa-b5ab-c00d5673fc8e)
 
 Preden je bil projekt zaključen sem:
-⚠️ Izklopil Telnet (port 23) in FTP (port 21).
-⚠️ Posodobil Dropbear SSH (port 22) in v config dodal AllowUsers za samo en IP.
-⚠️ Onemogočil SMB in gostujoči dostop.
-⚠️ Konfiguracija za HTTPS (port 7443) je ostala nespremenjena ker je ustrezna.
-⚠️ HTTP zahteve sem preusmeril na HTTPS (port 7443).
+- ⚠️ Izklopil Telnet (port 23) in FTP (port 21).
+- ⚠️ Posodobil Dropbear SSH (port 22) in v config dodal AllowUsers za samo en IP.
+- ⚠️ Onemogočil SMB in gostujoči dostop.
+- ⚠️ Konfiguracija za HTTPS (port 7443) je ostala nespremenjena ker je ustrezna.
+- ⚠️ HTTP zahteve sem preusmeril na HTTPS (port 7443).
 
 
 
