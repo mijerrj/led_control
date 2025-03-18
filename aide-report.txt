@@ -1,0 +1,243 @@
+jernej@srvubuntu:~$ sudo aide --config=/etc/aide/aide.conf --check
+WARNING: hash calculation: '/home/jernej/.vscode-server/cli/servers/Stable-ddc367ed5c8936efe395cffeec279b04ffd7db78/log.txt' has been changed (changed attributes: s+c+m, hash could not be calculated)
+WARNING: hash calculation: '/home/jernej/.vscode-server/data/logs/20250317T085102/remoteagent.log' has been changed (changed attributes: s+c+m, hash could not be calculated)
+WARNING: hash calculation: '/var/lib/mosquitto/mosquitto.db' has been changed (changed attributes: c+m+i, hash could not be calculated)
+WARNING: hash calculation: '/var/log/mosquitto/mosquitto.log' has been changed (changed attributes: s+c+m, hash could not be calculated)
+WARNING: hash calculation: '/var/log/sysstat/sa17' has been changed (changed attributes: s+c+m+b, hash could not be calculated)
+Entry /home/jernej/.vscode-server/cli/servers/Stable-ddc367ed5c8936efe395cffeec279b04ffd7db78/log.txt in databases has different attributes: -md5-sha1-rmd160-tiger-crc32-haval-gost-crc32b-sha256-sha512-whirlpool
+Entry /home/jernej/.vscode-server/data/logs/20250317T085102/remoteagent.log in databases has different attributes: -md5-sha1-rmd160-tiger-crc32-haval-gost-crc32b-sha256-sha512-whirlpool
+Entry /var/lib/systemd/timers/stamp-fwupd-refresh.timer in databases has different attributes: +md5+sha1+rmd160+tiger+crc32+haval+gost+crc32b+sha256+sha512+whirlpool
+Entry /var/log/aide/aideinit.errors in databases has different attributes: +md5+sha1+rmd160+tiger+crc32+haval+gost+crc32b+sha256+sha512+whirlpool
+Start timestamp: 2025-03-17 09:59:18 +0100 (AIDE 0.18.6)
+AIDE found differences between database and filesystem!!
+Ignored e2fs attributes: EINV
+
+Summary:
+  Total number of entries:      96969
+  Added entries:                9
+  Removed entries:              1
+  Changed entries:              16
+
+---------------------------------------------------
+Added entries:
+---------------------------------------------------
+
+d+++++++++++++++++: /home/jernej/.vscode-server/data/logs/20250317T085102/exthost2
+f+++++++++++++++++: /home/jernej/.vscode-server/data/logs/20250317T085102/exthost2/remoteExtHostTelemetry.log
+f+++++++++++++++++: /home/jernej/.vscode-server/data/logs/20250317T085102/exthost2/remoteexthost.log
+d+++++++++++++++++: /home/jernej/.vscode-server/data/logs/20250317T085102/exthost2/vscode.git
+f+++++++++++++++++: /home/jernej/.vscode-server/data/logs/20250317T085102/exthost2/vscode.git/Git.log
+d+++++++++++++++++: /home/jernej/.vscode-server/data/logs/20250317T085102/exthost2/vscode.github
+f+++++++++++++++++: /home/jernej/.vscode-server/data/logs/20250317T085102/exthost2/vscode.github/GitHub.log
+s+++++++++++++++++: /run/user/1000/vscode-git-821e263cb0.sock
+s+++++++++++++++++: /run/user/1000/vscode-ipc-3874e023-ed7e-4cc7-a9a2-b2db74465291.sock
+
+---------------------------------------------------
+Removed entries:
+---------------------------------------------------
+
+f-----------------: /var/lib/aide/aide.db.new
+
+---------------------------------------------------
+Changed entries:
+---------------------------------------------------
+
+d =.... mc.. .. . : /home/jernej/.vscode-server
+f <.... mci.H.. . : /home/jernej/.vscode-server/.cli.ddc367ed5c8936efe395cffeec279b04ffd7db78.log
+f >.... mc..-.. . : /home/jernej/.vscode-server/cli/servers/Stable-ddc367ed5c8936efe395cffeec279b04ffd7db78/log.txt
+f =.... mc..... . : /home/jernej/.vscode-server/data/CachedProfilesData/__default__profile__/extensions.builtin.cache
+d =.... mc.n .. . : /home/jernej/.vscode-server/data/logs/20250317T085102
+f >b... mc..H.. . : /home/jernej/.vscode-server/data/logs/20250317T085102/ptyhost.log
+f >.... mc..-.. . : /home/jernej/.vscode-server/data/logs/20250317T085102/remoteagent.log
+f =.... mc..H.. . : /var/lib/landscape/landscape-sysinfo.cache
+d =.... mc.. .. . : /var/lib/mosquitto
+f =.... mci. .. . : /var/lib/mosquitto/mosquitto.db
+f =.... mc..+.. . : /var/lib/systemd/timers/stamp-fwupd-refresh.timer
+f =.... mc..... . : /var/lib/update-notifier/fsck-at-reboot
+f >b... mc..+.. . : /var/log/aide/aideinit.errors
+f >b... mc..H.. . : /var/log/aide/aideinit.log
+f >.... mc.. .. . : /var/log/mosquitto/mosquitto.log
+f >b... mc.. .. . : /var/log/sysstat/sa17
+
+---------------------------------------------------
+Detailed information about changes:
+---------------------------------------------------
+
+Directory: /home/jernej/.vscode-server
+ Mtime     : 2025-03-17 08:50:57 +0100        | 2025-03-17 09:58:40 +0100
+ Ctime     : 2025-03-17 08:50:57 +0100        | 2025-03-17 09:58:40 +0100
+
+File: /home/jernej/.vscode-server/.cli.ddc367ed5c8936efe395cffeec279b04ffd7db78.log
+ Size      : 442                              | 414
+ Mtime     : 2025-03-17 08:51:02 +0100        | 2025-03-17 09:58:40 +0100
+ Ctime     : 2025-03-17 08:51:02 +0100        | 2025-03-17 09:58:40 +0100
+ Inode     : 129980                           | 129997
+ MD5       : qX4X9FA1EoDIcd4Y2ZFGRA==         | Q7NdXoJ5TyaynIWTgktN3g==
+ SHA1      : CzkbVQV5O3hrocBe4YSDywxLt6w=     | oAMLdl2lAHA/ngiXNQU13F9zdaY=
+ SHA256    : 5NvZi0Iz9P5WOgZxU78KJjmg6/TtJ7tP | bs3e8oSoPdt4nlWTaSMWetC6EflFBgMN
+             e0yqFLKmQXc=                     | Jt8SBAbk1Dg=
+ SHA512    : PAYfvXzYuTYMsqkSt6z9drRwN+Wyqh0G | g+Kpnd7qr91omGAwep0xga+hj0htgujd
+             vvIFghG+Hjvin2JNep7KMLQ93AYHApnt | TXdFyBQZ3FJVizfQfM8YPeHRdFcaNf2d
+             umt/BDklcRHIKmnXVrNpeQ==         | fyPE5Yt6zmanskX7QVGK4w==
+ RMD160    : CJxNc53rt/oElks6lFcen02tgSE=     | L2CZknIVEF/IuMzk2c8ToZsI5BE=
+ TIGER     : b8bnMS7rQdyt2i+rQEi340J62eyu1S/X | zlqCRanU60CggPnP/okUBXc0VxrWJMv2
+ CRC32     : 9kIvBw==                         | ipkg3A==
+ CRC32B    : I0o4Fg==                         | GG6Hnw==
+ HAVAL     : g6OXQxOAtIaNrAsedjUzmPnb09E71Olr | 1UKwLVxn1DsaiuyJ1PVnCisOQzynbCIJ
+             tCgNevBI1uA=                     | kUtYvX0ZE8Q=
+ WHIRLPOOL : P1CItf5pAwGoywS9KJuGWH/ATmU/3/m8 | 8fkTtIltsSYXrfqrS7HC7rSaBqPfWkRr
+             OjYTOO27WpEcoXOec8vuMAHW8LqgQofV | jmRafCfp2B7+YTGanUq0hEO08Q1kAte4
+             hnPfVSrZxaxoJYXW4aqSGQ==         | MU6ob9i8m+8nfenhDEI3nw==
+ GOST      : L4SA8iDka2SEjLu0VMrD581kWSAJEXKP | OQ205hzVta5uEVFdZoSfk5GFdYeQUtiW
+             ctg3L9kOFQI=                     | goLmW7ADFHI=
+
+File: /home/jernej/.vscode-server/cli/servers/Stable-ddc367ed5c8936efe395cffeec279b04ffd7db78/log.txt
+ Size      : 8876                             | 9144
+ Mtime     : 2025-03-17 08:56:03 +0100        | 2025-03-17 09:58:41 +0100
+ Ctime     : 2025-03-17 08:56:03 +0100        | 2025-03-17 09:58:41 +0100
+
+File: /home/jernej/.vscode-server/data/CachedProfilesData/__default__profile__/extensions.builtin.cache
+ Mtime     : 2025-03-17 08:51:08 +0100        | 2025-03-17 09:58:45 +0100
+ Ctime     : 2025-03-17 08:51:08 +0100        | 2025-03-17 09:58:45 +0100
+
+Directory: /home/jernej/.vscode-server/data/logs/20250317T085102
+ Mtime     : 2025-03-17 08:51:09 +0100        | 2025-03-17 09:58:47 +0100
+ Ctime     : 2025-03-17 08:51:09 +0100        | 2025-03-17 09:58:47 +0100
+ Linkcount : 3                                | 4
+
+File: /home/jernej/.vscode-server/data/logs/20250317T085102/ptyhost.log
+ Size      : 2288                             | 4662
+ Bcount    : 8                                | 16
+ Mtime     : 2025-03-17 08:51:09 +0100        | 2025-03-17 09:58:46 +0100
+ Ctime     : 2025-03-17 08:51:09 +0100        | 2025-03-17 09:58:46 +0100
+ MD5       : 8alGdhENYQGSILPQyN77kw==         | JmqQ6aNoPjcG1n2UHYQVGw==
+ SHA1      : +sjo1l2zYNeKyhb2dXEJVqAML9k=     | yGjcDIw1hRJphvX8D/VFLeRsfaU=
+ SHA256    : RXPQjaEaDJ481R9ySqHZOyWNsPkmoTd3 | VX/73qMR3V0Ji2Ij7FmOQ9yZ5LKm/xEy
+             fGOQSFmwwIA=                     | pXr6OKQAtVA=
+ SHA512    : k8aLfdTMIQQNsz3z74QC2qQqVk7MNMUX | PvCXsO/pWPEvyQR0fLPK/1lHLTYGY/R5
+             4is5vFLeuQRQ2T6OdpofAcNO0Ed10Uct | LHg+AKk7/n84nb/KtZXSmAx2DQYm08p3
+             08WSq8tz/oh9+fzMcDBwnw==         | hrRtdEdCXdEs4OsmN6SgGA==
+ RMD160    : Ys5C7qC8ICtaxvC1Q2lXFYAS0Og=     | svNL4QYFmrrDbboBinzBiS/5iIg=
+ TIGER     : 8zAU4AwebJ8OJjKdqFpmU/7xiQfnvoLs | I6NmglsinsZkCIfPS1tKdx7RPKlmB7lU
+ CRC32     : lfhaEQ==                         | 5v8P6g==
+ CRC32B    : SwV60Q==                         | mrU58Q==
+ HAVAL     : QuePkuL1fI79KiKdmpjg7wpJGVM9qEe4 | 8IencEH2ZbL3xMjc6ov1doa1XLJywVVN
+             8zrGbqeYR7c=                     | ppF/wxfQdXo=
+ WHIRLPOOL : hONBw3STMVIjoC933XRylvh82jkbyK9j | QBn3CSRFmzOtXIV+gktmfgTzs8b9iDaE
+             MrkI8qUOxFJH60bk56LVnqfLDP/CBQpo | YcWRiCZMFGgW3ogmAnrcaqKodv4XylyM
+             fXfUswHEfrAn0SwmxMEZzQ==         | k7la5shw17mbQJYahcIxQg==
+ GOST      : a+4gXmZFwqV9ttgMtIP95UlA4y/143MW | fn+7uqWVtwcV7NbJCdJU4twnGR6DOWbP
+             K4UnkyPyXiE=                     | JDRhBWZxw7k=
+
+File: /home/jernej/.vscode-server/data/logs/20250317T085102/remoteagent.log
+ Size      : 4462                             | 4790
+ Mtime     : 2025-03-17 08:56:03 +0100        | 2025-03-17 09:58:41 +0100
+ Ctime     : 2025-03-17 08:56:03 +0100        | 2025-03-17 09:58:41 +0100
+
+File: /var/lib/landscape/landscape-sysinfo.cache
+ Mtime     : 2025-03-17 08:50:24 +0100        | 2025-03-17 09:58:27 +0100
+ Ctime     : 2025-03-17 08:50:24 +0100        | 2025-03-17 09:58:27 +0100
+ MD5       : zZjSUYXV7YHii/jf/Kcf0w==         | F9yECXxqI+5IGalH6P/SCA==
+ SHA1      : 1CC+L6j+tY9UPZV0Eqjw/nlIFUA=     | EFOlnz3ezOSeY3B9whnOGHBts4w=
+ SHA256    : PWwVrXFehCmElC1TXqKBJUMz1VSaaz92 | 7xR8y+xxzq7Gsb3ntscMCrTaKdfGWUj6
+             tnWJn71L5kg=                     | 5PtHdTCSm4E=
+ SHA512    : RTW1ytyyNkfENIltsjj9/pY1TtpLOmas | ewfY9trPBvj0+A8n9XBjgCBEdv92LmBa
+             Ktu/EXWwp7QlQdW7hZqmiiqs5Dn8qkVH | e2aEU6Gn0LZoG7A8Z8NWE83P1bM09W6z
+             1GASZZdOMPtCP6/z1dkkUg==         | kmNC5bAY5vKW8Tx2bA+RCA==
+ RMD160    : C3+BCp3uNHhuzD67AUoviloQ7vY=     | UWaBgbE+F6VuyE27WrkIrZoEmhE=
+ TIGER     : CI0al7fVJr9t/nPP/ov4OrBNaf98bWCz | SU2CZT6EwWeCwEK4FBDO8fNq719hcKdU
+ CRC32     : vpXW5A==                         | CvIvUw==
+ CRC32B    : /s1BdA==                         | 5yzP9A==
+ HAVAL     : thLysbMef5HIvjoSsbWEr5odgbhDJ+WH | G/5/C3h9laxiX9ZZMUQRMWugZ/jwxrCe
+             yY7SHGsPLdw=                     | QdcRIs9B3fk=
+ WHIRLPOOL : POaOxV6GGpscuxDJlzfa3KbkaplzROX+ | 33qUgKhUfVQ+1PqnmshCsrWC8cOCF6ns
+             PF0XKSiKC4UDC+2Xi53QH6xtuJbZ+Quz | DJzWrzNMpF3td1iWObsOuH0/vXdgQB5p
+             UlO/vmDdwSesk4hX8Pjyzw==         | 7hnmy9+Ns5YEKDYMM95wkQ==
+ GOST      : LEAw0s+5SJViIizvrsSMWqQ4w7y6VoKg | NxYKsFRFRaK19EdFnBGh0qSBJq+1SsNA
+             XTwFtYSZiC0=                     | +WZLkLrVeOc=
+
+Directory: /var/lib/mosquitto
+ Mtime     : 2025-03-17 09:18:53 +0100        | 2025-03-17 09:48:54 +0100
+ Ctime     : 2025-03-17 09:18:53 +0100        | 2025-03-17 09:48:54 +0100
+
+File: /var/lib/mosquitto/mosquitto.db
+ Mtime     : 2025-03-17 09:18:53 +0100        | 2025-03-17 09:48:54 +0100
+ Ctime     : 2025-03-17 09:18:53 +0100        | 2025-03-17 09:48:54 +0100
+ Inode     : 129978                           | 129979
+
+File: /var/lib/systemd/timers/stamp-fwupd-refresh.timer
+ Mtime     : 2025-03-17 08:05:50 +0100        | 2025-03-17 09:44:50 +0100
+ Ctime     : 2025-03-17 08:05:50 +0100        | 2025-03-17 09:44:50 +0100
+
+File: /var/lib/update-notifier/fsck-at-reboot
+ Mtime     : 2025-03-17 08:50:25 +0100        | 2025-03-17 09:58:28 +0100
+ Ctime     : 2025-03-17 08:50:25 +0100        | 2025-03-17 09:58:28 +0100
+
+File: /var/log/aide/aideinit.errors
+ Size      : 0                                | 689
+ Bcount    : 0                                | 8
+ Mtime     : 2025-03-17 09:37:29 +0100        | 2025-03-17 09:56:57 +0100
+ Ctime     : 2025-03-17 09:37:29 +0100        | 2025-03-17 09:56:57 +0100
+
+File: /var/log/aide/aideinit.log
+ Size      : 0                                | 1166
+ Bcount    : 0                                | 8
+ Mtime     : 2025-03-17 09:37:29 +0100        | 2025-03-17 09:57:35 +0100
+ Ctime     : 2025-03-17 09:37:29 +0100        | 2025-03-17 09:57:35 +0100
+ MD5       : 1B2M2Y8AsgTpgAmY7PhCfg==         | DWf07gyky2nJhXuOoH7AVw==
+ SHA1      : 2jmj7l5rSw0yVb/vlWAYkK/YBwk=     | KMZLTC5xoXXyxq6SVqbxxf/8ZVE=
+ SHA256    : 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NM | IAAN7mKu007LBc/+jtm++6l4E5KrDb9o
+             pJWZG3hSuFU=                     | bWFbi6Sk0EQ=
+ SHA512    : z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXc | GJKF22959GeWnNO8EK3WfxDX87Fi0sov
+             g/SpIdNs6c5H0NE8XYXysP+DGNKHfuwv | e54mualOVjkhuMyw8Hptka5RFqKjLQCR
+             Y7kxvUdBeoGlODJ6+SfaPg==         | xkXePQnVmCLAvwYyG0limA==
+ RMD160    : nBGFpcXp/FRhKAiXfuj1SLIljTE=     | 0wURZcW/H8E5wUWR4YWHKKmp/hQ=
+ TIGER     : JPATDGOskzIWFm52sbuSX/Nz3i1JWE56 | UZnKj1aPGfIJBV+Gq8yYApXrunvKTqHB
+ CRC32     : AAAAAA==                         | dSYKuw==
+ CRC32B    : AAAAAA==                         | 4KEYHg==
+ HAVAL     : T2k4Ux8LyJkfYtp7vW994/rURWK4xvTr | uplmKRt8nvq6I33/TdngtPP2n91cDvqK
+             8UbVtORvfBc=                     | AGo0R3kSYpY=
+ WHIRLPOOL : Gfph11UipGabROOcHS4XJsUwIyEw1Af4 | afrMds3CYvxdZ43jjlQ3IMBDB4+3YEkK
+             mv7glkmX96c+g75piyiP68+I4+A8TwdX | X7HBH53JTjtNaFgiKW0CntT0Zrb1i+6h
+             6olk5Ztj2TcIsTjMQqZusw==         | cefDRUWFdLSPhPUCbAkWvw==
+ GOST      : zoW5nMRnUv/+41yrmnsCeKu0wtIFXP9o | TfQvmv1LlPArIHbSGynq5C0cg+hguZfR
+             WvSRLElJD40=                     | Jcb+/yLQzJA=
+
+File: /var/log/mosquitto/mosquitto.log
+ Size      : 32452                            | 32527
+ Mtime     : 2025-03-17 09:18:53 +0100        | 2025-03-17 09:48:54 +0100
+ Ctime     : 2025-03-17 09:18:53 +0100        | 2025-03-17 09:48:54 +0100
+
+File: /var/log/sysstat/sa17
+ Size      : 120844                           | 127036
+ Bcount    : 248                              | 264
+ Mtime     : 2025-03-17 09:30:00 +0100        | 2025-03-17 10:00:00 +0100
+ Ctime     : 2025-03-17 09:30:00 +0100        | 2025-03-17 10:00:00 +0100
+
+
+---------------------------------------------------
+The attributes of the (uncompressed) database(s):
+---------------------------------------------------
+
+/var/lib/aide/aide.db
+ MD5       : M9fSOeqoFancx2bO3DwzNA==
+ SHA1      : 3CNmU9DSDo7zTx1ue0pB0mZWh0U=
+ SHA256    : NWYcbl0wADrWLijKKyqZ7GzSt4zhB9wX
+             3tIA9tPrjfE=
+ SHA512    : soLFxfU0IW2xrKakG3w2iYOa6lhwJdh4
+             gyN7OMi8hi+oVXAQwpzNcW5mDL9c4yCl
+             hq9XXH3uyCLCtZ4pFUebhg==
+ RMD160    : 9a29uakGP8SU7L3FZKz0HDvPGpU=
+ TIGER     : cufb8G7TLGBwnIo79JhMUqB/6Edzm3mo
+ CRC32     : Uq9jqA==
+ CRC32B    : l7WftQ==
+ HAVAL     : eDIOgZX1HIZ/NSl283/pTgDJGd7ES6at
+             bYjTtgaxSCE=
+ WHIRLPOOL : T1EQpxk8snIiWOG9Xbx2FZk7UEXeNUdc
+             whUE+BLGnVYCr+01ZsTs95B8O8WNSMCI
+             6dlXRieSYGKaOhoZjB7c6Q==
+ GOST      : U+ldcvkvoAeYCLx/fzAnzuT4L9t/P3DT
+             xl1RH5vMYJc=
+
+
+End timestamp: 2025-03-17 10:27:18 +0100 (run time: 28m 0s)
