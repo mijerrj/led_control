@@ -40,12 +40,12 @@ Projekt za nadzor LED lučke preko spletne aplikacije, ki teče na Raspberry Pi 
 
 ## Priklop LED in stikala
 1. **LED lučka**:
-   - ** 3.3V → Anoda **.
-   - ** GPIO PIN 17 (Pin 11) → Katoda (krajša žička) LED → Upor (330Ω)
+   - ** 3.3V → Anoda.**
+   - ** GPIO PIN 17 (Pin 11) → Katoda (krajša žička) LED → Upor (330Ω).**
 
 2. **Stikalo**:
-   - **GPIO PIN 27 (Pin 13)** → Ena stran stikala.
-   - **GND** → Upor (330Ω) → Druga stran stikala.
+   - **GPIO PIN 27 (Pin 13) → Ena stran stikala.**
+   - **GND → Upor (330Ω) → Druga stran stikala.**
 
 ## Namestitev
 - Prvi del namestitve je potekal po navodilih iz kibernetika.xyz Raspberry Pi 3.docx dokumenta z to razliko da sem namesto node.js uporabil Python in knjižnico Flask. Postavil sem svojo domeno na duckdns.org spletni strani in jo zaščitil z Let's Encrypt certifikatom na NGINX-u. Ker sem doma imel port 443 že zaseden sem za TLS povezavo uporabil port 7443.
