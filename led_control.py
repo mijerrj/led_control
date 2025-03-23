@@ -27,7 +27,7 @@ button_state = "released"
 led_is_on = False
 
 # MQTT konfiguracija
-MQTT_BROKER = "10.86.20.111"
+MQTT_BROKER = "localhost"
 MQTT_TOPIC = "led_control/button_status"
 
 mqtt_client = mqtt.Client()
