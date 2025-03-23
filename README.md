@@ -4,6 +4,7 @@ Projekt za nadzor LED lučke preko spletne aplikacije, ki teče na Raspberry Pi 
 
 ## Funkcionalnosti
 - Vklop in izklop LED lučke preko spletne aplikacije.
+- Vklop LED diode na pritisk in izklop na sprostitev.
 - Prikaz trenutnega stanja LED (prižgana/ugasnjena).
 - Varovanje aplikacije pred DDoS napadi z Nginx in Flask-Limiter.
 - Samodejni zagon aplikacije ob zagonu sistema.
