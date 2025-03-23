@@ -53,6 +53,11 @@ Projekt za nadzor LED lučke preko spletne aplikacije, ki teče na Raspberry Pi 
 
 ## Povezave na ploščici
 
+![image](https://github.com/user-attachments/assets/fa1255df-2566-42ba-93af-bcb26f6c2a6d)
+
+## Povezava na GPIO pin-e
+
+![image](https://github.com/user-attachments/assets/fece4070-1c53-4236-9735-d94242a190cb)
 
 
 ## Namestitev
