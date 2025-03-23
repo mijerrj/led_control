@@ -40,8 +40,8 @@ Projekt za nadzor LED lučke preko spletne aplikacije, ki teče na Raspberry Pi 
 
 ## Priklop LED in stikala
 1. **LED lučka**:
-   - ** 3.3V → Anoda.**
-   - ** GPIO PIN 17 (Pin 11) → Katoda (krajša žička) LED → Upor (330Ω).**
+   - **3.3V → Anoda.**
+   - **GPIO PIN 17 (Pin 11) → Katoda (krajša žička) LED → Upor (330Ω).**
 
 2. **Stikalo**:
    - **GPIO PIN 27 (Pin 13) → Ena stran stikala.**
