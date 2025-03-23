@@ -10,6 +10,8 @@ body {
 }
 
 .container {
+    display: inline-block;
+    height: 260px;
     text-align: center;
     border: 2px solid #4caf50;
     padding: 20px;

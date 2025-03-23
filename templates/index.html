@@ -33,6 +33,8 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             checkLoginStatus();
+            pollButtonStatus();
+            pollLEDStatus();
         });
 
         function login() {
@@ -99,23 +101,45 @@
             .catch(err => console.error("Napaka pri nadzoru LED:", err));
         }
 
-        function setupWebSocket() {
-            const protocol = window.location.protocol === "https:" ? "wss://" : "ws://";
-            const socket = new WebSocket(protocol + window.location.host + "/ws/button");
-
-            socket.onmessage = function(event) {
-                document.getElementById('button-status').textContent = event.data;
-            };
-
-            socket.onerror = function(error) {
-                console.error("Napaka pri WebSocket povezavi:", error);
-            };
-
-            socket.onclose = function() {
-                console.warn("WebSocket povezava zaprta, poskus ponovne povezave...");
-                setTimeout(setupWebSocket, 5000);
-            };
+// Polling funkcija, ki periodično (vsakih 500ms) preverja stanje fizičnega gumba
+        function pollButtonStatus() {
+          fetch("/button/status")
+          .then(response=> {
+            if (!response.ok) {
+              throw new Error("Napaka pri pridobivanju statusa gumba");
+            }
+            return response.json();
+          })
+          .then(data => {
+            let status = data.status;
+            let message = (status === "pressed") ? "Stikalo ON (LED prižgana)" : "...čakam...";
+            document.getElementById("button-status").innerText = message;
+          })
+          .catch(err => console.error("Napaka pri pridobivanju statusa gumba:", err));
+          setTimeout(pollButtonStatus, 500);
         }
+
+        // Pollanje statusa LED
+        function pollLEDStatus() {
+          const token = localStorage.getItem("jwt_token");
+          fetch("/led/status?ts=" + new Date().getTime(), {
+          headers: token ? { "Authorization": "Bearer " + token } : {}
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error("Napaka pri pridobivanju statusa LED");
+            }
+            return response.json();
+        })
+        .then(data => {
+          let status = data.status;
+          document.getElementById("led-status").innerText = (status === "on") ? "ON" : "OFF";
+        })
+        .catch(err => console.error("Napaka pri pridobivanju statusa LED:", err));
+        setTimeout(pollLEDStatus, 500);
+       }
+          
+
     </script>
 </body>
 </html>
