@@ -46,6 +46,14 @@ Projekt za nadzor LED lučke preko spletne aplikacije, ki teče na Raspberry Pi 
 2. **Stikalo**:
    - **GPIO PIN 27 (Pin 13) → Ena stran stikala.**
    - **GND → Upor (330Ω) → Druga stran stikala.**
+  
+## Kako poteka proces 
+
+![Untitled Diagram drawio](https://github.com/user-attachments/assets/e2060c26-4790-4479-b12a-36d3b4fa2e5b)
+
+## Povezave na ploščici
+
+
 
 ## Namestitev
 - Prvi del namestitve je potekal po navodilih iz kibernetika.xyz Raspberry Pi 3.docx dokumenta z to razliko, da sem namesto node.js uporabil Python in knjižnico Flask. Postavil sem svojo domeno na duckdns.org spletni strani in jo zaščitil z Let's Encrypt certifikatom na NGINX-u. Ker sem doma imel port 443 že zaseden sem za TLS povezavo uporabil port 7443. Najprej sem namestil Python 3 in orodja za virtualna okolja, pripravil mapo za projekt, ustvaril in aktiviral virtualno okolje in namestil potrebne knjižnice (Flask, Flask-Limiter, RPi-GPIO). Ustvaril sem datoteko led_control.py in napisal kodo, ki bo izvajala funkcije za prijavo z jwt avtentikacijo, spremljanje stanj fizičnega stikala in led diode in API poti. Naredil sem tudi mapo templates z datoteko index.html in podmapo css z .css datoteko. Po uspešnem testiranju aplikacije sem ustvaril led_control.service storitveno datoteko, ki je poskrbela za samodejno zaganjanje aplikacije ob zagonu (izpad elektrike ipd.) Na koncu, ko je vse delovalo tako kot mora sem z Flask-Limiter omejil število zahtev na web aplikacijo, kar bo preprečilo DDOS napade. V požarnem zidu sem pustil odprte samo tiste porte ki, so nujni za nemoteno delovanje aplikacije.
