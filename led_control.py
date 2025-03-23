@@ -7,28 +7,27 @@ import threading
 import time
 import paho.mqtt.client as mqtt
 
-# ======================[ Flask konfiguracija ]======================
+# Flask
 app = Flask(__name__)
 app.config["JWT_SECRET_KEY"] = "@bar4kadAbara"
 jwt = JWTManager(app)
 limiter = Limiter(get_remote_address, app=app, default_limits=["10 per second"])
 
-# ======================[ GPIO konfiguracija ]=======================
+# GPIO
 LED_PIN = 17
 BUTTON_PIN = 27
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(LED_PIN, GPIO.OUT)
-# Gumb je vezan med GPIO in GND, zato uporabljamo pull-up (brez pritiska je HIGH, pritisnjen pa LOW)
 GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-# ======================[ Globalne spremenljivke ]===================
-web_led_state = "off"    # Spletni ukaz ("on" oz. "off")
-button_state = "released"  # Fizično stanje gumba ("pressed" oz. "released")
-led_is_on = False          # Trenutno stanje LED (True = LED sveti)
+#  Globalne spremenljivke
+web_led_state = "off"
+button_state = "released"
+led_is_on = False
 
-# ======================[ MQTT konfiguracija ]=======================
-MQTT_BROKER = "localhost"
+# MQTT konfiguracija
+MQTT_BROKER = "10.86.20.111"
 MQTT_TOPIC = "led_control/button_status"
 
 mqtt_client = mqtt.Client()
@@ -38,7 +37,7 @@ try:
 except Exception as e:
     print(f"MQTT error: {e}")
 
-# ======================[ Funkcija za spremljanje gumba in LED ]========
+# Funkcija za spremljanje gumba in LED
 def monitor_button():
     global button_state, web_led_state, led_is_on
     prev_button_state = None
@@ -53,11 +52,11 @@ def monitor_button():
             print(f"[BUTTON] {button_state}")
             prev_button_state = current_state
 
-        # LED naj sveti, če je gumb pritisnjen ALI če spletni ukaz je "on"
+        # LED naj sveti, če je gumb pritisnjen ALI če je v web app ukaz "on"
         led_should_be_on = (button_state == "pressed") or (web_led_state == "on")
         print(f"[DEBUG] web_led_state={web_led_state}, button={button_state}, LED_should_be_on={led_should_be_on}")
 
-        # Ker je LED aktivna na LOW (sveti, ko je GPIO nastavljen na LOW)
+        # Ker je LED aktivna na LOW
         if led_should_be_on != led_is_on:
             if led_should_be_on:
                 GPIO.output(LED_PIN, GPIO.LOW)
@@ -69,11 +68,11 @@ def monitor_button():
 
         time.sleep(0.05)
 
-# ======================[ Zazeni spremljanje gumba loceno ]===============
+# Zazeni spremljanje gumba loceno
 button_thread = threading.Thread(target=monitor_button, daemon=True)
 button_thread.start()
 
-# ======================[ JWT AVTENTIKACIJA ]=======================
+# JWT AVTENTIKACIJA
 USERS = {"admin": "password123"}
 
 @app.route("/login", methods=["POST"])
@@ -86,10 +85,9 @@ def login():
         return jsonify({"access_token": token})
     return jsonify({"msg": "Invalid username or password"}), 401
 
-# ======================[ API poti ]=======================
+# API poti
 @app.route('/')
 def index():
-    # Uporabi predlogo iz /templates/index.html, ki že ima industrijski izgled
     return render_template("index.html", status=("ON" if led_is_on else "OFF"))
 
 @app.route('/led/on', methods=['POST'])
@@ -98,7 +96,6 @@ def led_on():
     global web_led_state
     web_led_state = "on"
     print("[WEB] LED set to ON, web_led_state now:", web_led_state)
-    # Pošlji uporabnika nazaj na glavno stran
     return redirect(url_for("index"))
 
 @app.route('/led/off', methods=['POST'])
@@ -112,15 +109,13 @@ def led_off():
 @app.route('/led/status', methods=['GET'])
 @jwt_required()
 def led_status():
-    # Ne zahtevamo JWT, da je to javno dostopno
     return jsonify({"status": "on" if led_is_on else "off"})
 
 @app.route('/button/status', methods=['GET'])
-#@jwt_required()
 def button_status():
     return jsonify({"status": button_state})
 
-# ======================[ Zagon aplikacije ]=======================
+# Zagon aplikacije
 if __name__ == '__main__':
     try:
         app.run(host='0.0.0.0', port=5000)
